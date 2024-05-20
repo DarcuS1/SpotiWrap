@@ -29,8 +29,8 @@ public class AuthController {
     private String code = "";
 
     private static final SpotifyApi spotifyApi = new SpotifyApi.Builder()
-            .setClientId("d8e893652a7c4b57abfbf7637f87177e")
-            .setClientSecret("1a8daeb9516b4260adf4cda78090ab0c")
+            .setClientId("${clientID}")
+            .setClientSecret("${clientSecret}")
             .setRedirectUri(redirectUri)
             .build();
 
@@ -79,7 +79,7 @@ public class AuthController {
                 .offset(5)
                 .build();
         try {
-           // spotifyApi.authorizationCodeRefresh("d8e893652a7c4b57abfbf7637f87177e", "1a8daeb9516b4260adf4cda78090ab0c", spotifyApi.getRefreshToken() );
+           
             final Paging<Artist> artistPaging = getUsersTopArtistsRequest.execute();
             // return top artists as JSON
             System.out.println("CEVA");
@@ -100,7 +100,6 @@ public class AuthController {
                 .offset(5)
                 .build();
         try {
-            // spotifyApi.authorizationCodeRefresh("d8e893652a7c4b57abfbf7637f87177e", "1a8daeb9516b4260adf4cda78090ab0c", spotifyApi.getRefreshToken() );
             final Paging<Track> tracksPaging = getUsersTopTracksRequest.execute();
             // return top tracks as JSON
             System.out.println("CEVA");
@@ -120,7 +119,6 @@ public class AuthController {
                 .offset(5)
                 .build();
         try {
-            // spotifyApi.authorizationCodeRefresh("d8e893652a7c4b57abfbf7637f87177e", "1a8daeb9516b4260adf4cda78090ab0c", spotifyApi.getRefreshToken() );
             final Paging<Track> tracksPaging = getUsersTopTracksRequest.execute();
             // return top tracks as JSON
             System.out.println("CEVA");
